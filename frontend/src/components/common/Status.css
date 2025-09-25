@@ -1,0 +1,22 @@
+.Status {
+  color: black;
+  font-weight: bolder;
+  padding: 5px 10px;
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 50px;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.Status_Complete {
+  background-color: #5dd082;
+}
+
+.Status_Caution {
+  background-color: #ffbc5f;
+}
+
+.Status_Danger {
+  background-color: #ff7575;
+}

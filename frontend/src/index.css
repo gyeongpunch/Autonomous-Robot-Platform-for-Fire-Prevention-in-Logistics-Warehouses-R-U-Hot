@@ -1,0 +1,39 @@
+/* 기본 HTML 요소들의 스타일을 리셋하여 전체 화면을 차지하도록 합니다. */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* body에서 스크롤이 생기는 것을 방지합니다. */
+}
+
+@import 'tailwindcss';
+
+/* globals.css 또는 styles.css */
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE, Edge */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .transition-flex {
+    transition: flex 0.3s ease;
+  }
+}

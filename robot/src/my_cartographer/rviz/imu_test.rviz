@@ -1,0 +1,46 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /TF1
+        - /IMU1
+        - /IMU2
+      Splitter Ratio: 0.5
+    Tree Height: 600
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Marker Scale: 0.3
+    - Alpha: 1.0
+      Class: rviz_default_plugins/Imu
+      Color: 255; 25; 0
+      Enabled: true
+      Name: IMU_Raw_Data
+      Topic:
+        Value: /imu/data_raw
+      Update Interval: 0.04
+    - Alpha: 1.0
+      Class: rviz_default_plugins/Imu
+      Color: 0; 255; 0
+      Enabled: true
+      Name: IMU_Filtered_Data
+      Topic:
+        Value: /imu/data_filtered
+      Update Interval: 0.04
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: base_link
+    Frame Rate: 30
+  Name: root
+  Tools: []
+  Value: true

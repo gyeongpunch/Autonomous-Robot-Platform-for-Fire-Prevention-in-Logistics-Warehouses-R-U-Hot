@@ -1,0 +1,69 @@
+.FilterLocation {
+  font-family: sans-serif;
+  color: #eaeaf0;
+  position: relative;
+  width: 100%; /* 부모 너비에 맞게 꽉 채움 */
+  max-width: 300px; /* 최대 너비 제한 */
+  box-sizing: border-box;
+}
+
+.FilterLocation_Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.Chevron {
+  font-size: 10px;
+  margin-left: 4px;
+  flex-shrink: 0; /* 축소하지 않음 */
+}
+
+.LocationUnderline {
+  height: 1px;
+  background-color: #eaeaf0;
+  margin-top: 4px;
+}
+
+.FilterMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background-color: #2a2b35;
+  border: 1px solid #4b4b4b;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.FilterItem {
+  padding: 10px 12px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.FilterItem:hover {
+  background-color: #3a3b45;
+}
+
+@media (max-width: 768px) {
+  .FilterLocation_Title {
+    font-size: 1rem; /* 모바일에서 글자 크기 축소 */
+  }
+
+  /* 말줄임 설정 보강 */
+  .FilterLocation_Title span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
