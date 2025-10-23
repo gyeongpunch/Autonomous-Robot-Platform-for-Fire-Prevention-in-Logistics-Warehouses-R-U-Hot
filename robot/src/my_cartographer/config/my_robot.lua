@@ -5,10 +5,10 @@ options = {
   map_builder = MAP_BUILDER,
   trajectory_builder = TRAJECTORY_BUILDER,
   map_frame = "map",
-  tracking_frame = "base_link", -- 원래 base_link였음
-  published_frame = "base_link", -- 원래 base_link였음
+  tracking_frame = "base_link",
+  published_frame = "base_link",
   odom_frame = "odom",
-  provide_odom_frame = true, -- 원래 true 였음
+  provide_odom_frame = true,
   publish_frame_projected_to_2d = true,
   use_odometry = false,
   use_nav_sat = false,
@@ -34,20 +34,13 @@ TRAJECTORY_BUILDER_2D.use_imu_data = true
 TRAJECTORY_BUILDER_2D.imu_gravity_time_constant = 10.
 TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 TRAJECTORY_BUILDER_2D.voxel_filter_size = 0.05
-
--- 실시간 위치 추정 시, LiDAR 스캔 매칭의 신뢰도를 높게 설정
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 10.
 TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 40.
-
-
 TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 1
 
--- 1. 전체 지도 최적화를 더 자주 수행하여 오차를 빠르게 보정합니다.
 POSE_GRAPH.optimize_every_n_nodes = 90
 POSE_GRAPH.global_sampling_ratio = 0.003
 
-
--- ▼▼▼▼▼ [핵심 수정] constraint_builder 테이블을 명시적으로 생성합니다. ▼▼▼▼▼
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.3
 POSE_GRAPH.constraint_builder.max_constraint_distance = 15.
 POSE_GRAPH.constraint_builder.min_score = 0.5
@@ -55,24 +48,11 @@ POSE_GRAPH.constraint_builder.global_localization_min_score = 0.6
 POSE_GRAPH.constraint_builder.loop_closure_translation_weight = 1.1e4
 POSE_GRAPH.constraint_builder.loop_closure_rotation_weight = 1e5
 
-
-
---POSE_GRAPH.constraint_builder.search_window_x = 2.
---POSE_GRAPH.constraint_builder.search_window_y = 2.
---POSE_GRAPH.constraint_builder.angular_search_window = math.rad(15.)
-
-
 POSE_GRAPH.optimization_problem.acceleration_weight = 1e-1
 POSE_GRAPH.optimization_problem.rotation_weight = 3e2
 
 POSE_GRAPH.pure_localization_trimmer = {
   max_submaps_to_keep = 3,
 }
-
--- POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e0
--- POSE_GRAPH.optimization_problem.odometry_rotation_weight = 1e2
-
--- 4. 최적화 계산을 더 많이 수행하여 정밀도를 높입니다.
--- POSE_GRAPH.optimization_problem.ceres_solver_options.max_num_iterations = 30
 
 return options
