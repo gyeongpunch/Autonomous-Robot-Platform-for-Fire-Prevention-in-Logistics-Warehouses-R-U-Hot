@@ -33,45 +33,6 @@
 3) 관리자/작업자: 모바일에서 위치·이미지 확인 → 처리 이력 등록(세션 인증)
 
 ## 빠른 시작 
-
-**0. 프로젝트 클론**
-```bash
-git clone https://lab.ssafy.com/s13-webmobile3-sub1/S13P11A202.git
-cd S13P11A202
-```
-
-**1. 필수 요건**
-- JDK 21, Node 18+, AWS 자격증명(Access/Secret)
-
-**2. 백엔드 설정**
-- 포팅 매뉴얼 참고
-
-**3. 백엔드 실행**
-```bash
-cd server 
-
-# 의존성 설치
-./mvnw clean package
-
-# 프로젝트 실행
-./mvnw spring-boot:run
-```
-
-**4. 프론트엔드 설정**
-- 포팅 매뉴얼 참고 
-
-**5. 프론트엔드 실행**
-```bash
-cd frontend
-
-# 의존성 설치 
-npm install 
-
-# 프로젝트 실행  
-npm run dev 
-```
-
-**6. 임베디드** 
 ```bash
 # 0. ROS2 개발 환경 구축
 https://docs.ros.org/en/humble/Installation.html#binary-packages
